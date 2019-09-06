@@ -6,4 +6,4 @@
 直接把复制word-cloud文件夹复制到项目中即可
 
 # 效果
-![/image/demo.png]()
+![](./image/demo.png)
