@@ -1,0 +1,8 @@
+<view style="position:relative;width:{{width}}px">
+  <view style="position:absolute;width:100%;visibility:hidden;">
+    <canvas style="width:100%;height: {{height}}px;" id="canvas" canvas-id="canvas"></canvas>
+  </view>
+  <view style="position:relative;">
+    <view wx:for="{{spans}}" wx:key="{{index}}" style="position:absolute;left:{{((item.gx + item.info.gw / 2) * item.g + item.info.fillTextOffsetX)}}px;top:{{((item.gy + item.info.gh / 2) * item.g + item.info.fillTextOffsetY)}}px;width:{{item.info.fillTextWidth}}px;height:{{item.info.fillTextHeight}}px;line-height:{{item.fontSize}}px;font-size:{{(item.fontSize * item.info.mu)}}px; transform:{{item.transformRule}};transformOrigin:50% 40%;color:{{item.color}}">{{item.word}}</view>
+  </view>
+</view>

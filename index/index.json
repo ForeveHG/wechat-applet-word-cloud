@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "word-cloud": "/word-cloud/index"
+  }
+}
