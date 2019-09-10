@@ -572,7 +572,7 @@ function WordCloud(ctx, mycanvas, options, self, callback) {
       classes = settings.classes;
     }
 
-    drawSpan.push({
+    callback({
       g,
       gx,
       gy,
@@ -587,7 +587,7 @@ function WordCloud(ctx, mycanvas, options, self, callback) {
       rotateDeg,
       transformRule,
       attributes
-    })
+    }) //将要绘制的span参数通过回调函数传出
   };
 
   /* Help function to updateGrid */
@@ -767,7 +767,6 @@ function WordCloud(ctx, mycanvas, options, self, callback) {
     var timer = loopingFunction(function loop() {
       if (i >= settings.list.length) {
         stoppingFunction(timer);
-        callback(drawSpan) //将要绘制的span参数通过回调函数传出
         return;
       }
       escapeTime = (new Date()).getTime();

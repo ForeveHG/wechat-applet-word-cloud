@@ -25,18 +25,24 @@ Component({
     }
   },
 
+  data: {
+    spans: []
+  },
+
   ready() {
     let that = this;
     this.ctx = wx.createCanvasContext('canvas', this);
     let query = this.createSelectorQuery();
+
     query.select("#canvas").boundingClientRect(function (res) {
       WordCloud(that.ctx, res, {
         minSize: 8,
         list: that.data.list,
         color: that.data.color
       }, that, function (val) {
+        that.data.spans.push(val)
         that.setData({
-          spans: val
+          spans: that.data.spans
         })
       })
     }).exec();

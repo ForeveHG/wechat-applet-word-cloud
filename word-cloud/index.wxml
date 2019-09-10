@@ -1,8 +1,8 @@
-<view style="position:relative;width:{{width}}px">
-  <view style="position:absolute;width:100%;visibility:hidden;">
-    <canvas style="width:100%;height: {{height}}px;" id="canvas" canvas-id="canvas"></canvas>
+<view style="position:relative;margin:30rpx;">
+  <view style="position:absolute;width:100%;">
+    <canvas style="width:100%;height: {{height * 2}}rpx;left:-100000rpx" id="canvas" canvas-id="canvas"></canvas>
   </view>
   <view style="position:relative;">
-    <view wx:for="{{spans}}" wx:key="{{index}}" style="position:absolute;left:{{((item.gx + item.info.gw / 2) * item.g + item.info.fillTextOffsetX)}}px;top:{{((item.gy + item.info.gh / 2) * item.g + item.info.fillTextOffsetY)}}px;width:{{item.info.fillTextWidth}}px;height:{{item.info.fillTextHeight}}px;line-height:{{item.fontSize}}px;font-size:{{(item.fontSize * item.info.mu)}}px; transform:{{item.transformRule}};transformOrigin:50% 40%;color:{{item.color}}">{{item.word}}</view>
+    <text wx:for="{{spans}}" wx:key="{{index}}" style="position:absolute;left:{{(((item.gx + item.info.gw / 2) * item.g + item.info.fillTextOffsetX)) * 2}}rpx;top:{{(((item.gy + item.info.gh / 2) * item.g + item.info.fillTextOffsetY)) * 2}}rpx;width:{{item.info.fillTextWidth * 2 + 4}}rpx;height:{{item.info.fillTextHeight * 2}}rpx;line-height:{{item.fontSize * 2}}rpx;font-size:{{(item.fontSize * item.info.mu) * 2}}rpx; transform:{{item.transformRule}};transformOrigin:50% 40%;color:{{item.color}}">{{item.word}}</text>
   </view>
 </view>
