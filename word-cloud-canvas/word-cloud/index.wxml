@@ -1,0 +1,4 @@
+<!--components/word-cloud/index.wxml-->
+<view>
+  <canvas style="width:100%;height:{{height}}px;display:block;" canvas-id="canvas"></canvas>
+</view>
